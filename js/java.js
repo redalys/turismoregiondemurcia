@@ -349,3 +349,17 @@ function traduce(e, t, a) {
         }
     })
 }
+
+function ver_destino(a){
+	var formData = {
+		"id_zona"	: a
+	};
+	$.ajax({
+		url: "https://www.turismoregiondemurcia.es/es/w_get_mapa_destinos",
+		type: "get",
+		data: formData,
+		success: function(response){
+			$("#ajaxCarrusel").html(response);	
+		}
+	});
+}	
